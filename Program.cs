@@ -1,12 +1,27 @@
-﻿namespace Eventos
+﻿using Eventos.TipoEventos.Interfaces;
+using Eventos.Utilerias;
+using System;
+using System.Collections.Generic;
+
+namespace Eventos
 {
     public class Program
     {
         static void Main(string[] args)
         {
-            LeerArchivo _leerArchivo = new LeerArchivo();
+            Fabrica.Fabrica fabrica = new Fabrica.Fabrica();
+            fabrica.Iniciar();
 
-            _leerArchivo.Leer();
+
+            List<Contenedor> contenedors = fabrica.LeerArchivo.Leer();
+
+            foreach(Contenedor contenedor in contenedors)
+            {
+                IEvent evento = fabrica.CrearInstancia(contenedor);
+                Console.WriteLine(evento.ToString());
+            }
+
+            Console.ReadLine();
         }
     }
 }

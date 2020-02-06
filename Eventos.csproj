@@ -43,10 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Fabrica\Fabrica.cs" />
     <Compile Include="LeerArchivo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ValidarEvento.cs" />
+    <Compile Include="TipoEventos\EventoFuturo.cs" />
+    <Compile Include="TipoEventos\EventoPasado.cs" />
+    <Compile Include="TipoEventos\Interfaces\IEvent.cs" />
+    <Compile Include="TipoEventos\Tipo.cs" />
+    <Compile Include="Utilerias\Contenedor.cs" />
+    <Compile Include="Utilerias\Escala.cs" />
+    <Compile Include="Utilerias\Interfaces\IValidaFecha.cs" />
+    <Compile Include="Utilerias\ValidaFecha.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
