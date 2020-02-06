@@ -5,7 +5,7 @@ namespace Eventos
 {
     public class LeerArchivo
     {
-        protected readonly string _direccion = "C:\\BLUE OCEAN\\CAPACITACIÓN\\Eventos\\eventos.txt";
+        protected readonly string _direccion = "C:\\BLUE OCEAN\\CAPACITACION\\Eventos\\eventos.txt";
 
         protected ValidarEvento _validarEvento = new ValidarEvento();
 
