@@ -1,6 +1,6 @@
 ﻿namespace Eventos.Utilerias
 {
-    public enum Escala
+    public enum EscalaTiempo
     {
         Mes,
         Dia,

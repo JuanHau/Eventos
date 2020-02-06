@@ -2,9 +2,8 @@
 
 namespace Eventos.Utilerias.Interfaces
 {
-    public interface IValidaFecha
+    public interface IConvertidorFecha
     {
         DateTime ConvertirFecha(string fecha);
-        Contenedor ValidarTipo(DateTime fecha);
     }
 }

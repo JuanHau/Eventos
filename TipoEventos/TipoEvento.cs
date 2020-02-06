@@ -1,6 +1,6 @@
 ﻿namespace Eventos.TipoEventos
 {
-    public enum Tipo
+    public enum TipoEvento
     {
         Futuro,
         Pasado

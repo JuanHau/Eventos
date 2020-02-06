@@ -3,10 +3,10 @@ using System;
 
 namespace Eventos.TipoEventos.Interfaces
 {
-    public interface IEvent
+    public interface IEvento
     {
         string Nombre { get; set; }
         int Duracion { get; set; }
-        Escala Escala { get; set; }
+        EscalaTiempo Escala { get; set; }
     }
 }

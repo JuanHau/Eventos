@@ -3,13 +3,13 @@ using Eventos.Utilerias;
 
 namespace Eventos.TipoEventos
 {
-    public class EventoPasado : IEvent
+    public class EventoPasado : IEvento
     {
         public string Nombre { get; set; }
         public int Duracion { get; set; }
-        public Escala Escala { get; set; }
+        public EscalaTiempo Escala { get; set; }
 
-        public EventoPasado(string nombre, int duracion, Escala escala)
+        public EventoPasado(string nombre, int duracion, EscalaTiempo escala)
         {
             Nombre = nombre;
             Duracion = duracion;
@@ -22,19 +22,19 @@ namespace Eventos.TipoEventos
             string escala = string.Empty;
             switch (Escala)
             {
-                case Escala.Mes:
+                case EscalaTiempo.Mes:
                     escala = Duracion > 1 ? "meses" : "mes";
                     break;
-                case Escala.Dia:
+                case EscalaTiempo.Dia:
                     escala = Duracion > 1 ? "días" : "día";
                     break;
-                case Escala.Hora:
+                case EscalaTiempo.Hora:
                     escala = Duracion > 1 ? "horas" : "hora";
                     break;
-                case Escala.Minuto:
+                case EscalaTiempo.Minuto:
                     escala = Duracion > 1 ? "minutos" : "minuto";
                     break;
-                case Escala.Segundo:
+                case EscalaTiempo.Segundo:
                     escala = Duracion > 1 ? "segundos" : "segundo";
                     break;
             }

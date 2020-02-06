@@ -6,18 +6,20 @@ using System.IO;
 
 namespace Eventos
 {
-    public class LeerArchivo
+    public class LectorArchivo : ILectorArchivo
     {
         protected readonly string _direccion = "C:\\BLUE OCEAN\\CAPACITACION\\Eventos\\eventos.txt";
-        protected IValidaFecha _validaFecha;
+        protected IValidadorFecha _validadorFecha;
+        protected IConvertidorFecha _convertidorFecha;
 
 
-        public LeerArchivo(IValidaFecha validaFecha)
+        public LectorArchivo(IValidadorFecha validaFecha, IConvertidorFecha convertidorFecha)
         {
-            _validaFecha = validaFecha;
+            _validadorFecha = validaFecha;
+            _convertidorFecha = convertidorFecha;
         }
 
-        public List<Contenedor> Leer()
+        public List<Contenedor> LeerArchivo()
         {
             //Referencia 01 de enero de 2020 00:00:00
             List<Contenedor> contenedors = new List<Contenedor>();
@@ -37,8 +39,8 @@ namespace Eventos
                         string[] contenido = evento.Split(',');
                         if (contenido.Length > 0 && contenido.Length == 2)
                         {
-                            DateTime fecha = _validaFecha.ConvertirFecha(contenido[1]);
-                            Contenedor contenedor = _validaFecha.ValidarTipo(fecha);
+                            DateTime fecha = _convertidorFecha.ConvertirFecha(contenido[1]);
+                            Contenedor contenedor = _validadorFecha.ValidarFecha(fecha);
 
                             if(contenedor == null)
                             {

@@ -43,18 +43,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Fabrica\Fabrica.cs" />
-    <Compile Include="LeerArchivo.cs" />
+    <Compile Include="LectorArchivo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TipoEventos\EventoFuturo.cs" />
     <Compile Include="TipoEventos\EventoPasado.cs" />
-    <Compile Include="TipoEventos\Interfaces\IEvent.cs" />
-    <Compile Include="TipoEventos\Tipo.cs" />
+    <Compile Include="TipoEventos\Interfaces\IEvento.cs" />
+    <Compile Include="TipoEventos\TipoEvento.cs" />
     <Compile Include="Utilerias\Contenedor.cs" />
-    <Compile Include="Utilerias\Escala.cs" />
-    <Compile Include="Utilerias\Interfaces\IValidaFecha.cs" />
-    <Compile Include="Utilerias\ValidaFecha.cs" />
+    <Compile Include="Utilerias\ConvertidorFecha.cs" />
+    <Compile Include="Utilerias\EscalaTiempo.cs" />
+    <Compile Include="Utilerias\Interfaces\IConvertidorFecha.cs" />
+    <Compile Include="Utilerias\Interfaces\ILectorArchivo.cs" />
+    <Compile Include="Utilerias\Interfaces\IProcesadorEvento.cs" />
+    <Compile Include="Utilerias\Interfaces\IValidadorFecha.cs" />
+    <Compile Include="Utilerias\ProcesadorEvento.cs" />
+    <Compile Include="Utilerias\ValidadorFecha.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

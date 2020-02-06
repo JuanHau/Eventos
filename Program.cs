@@ -1,7 +1,7 @@
 ﻿using Eventos.TipoEventos.Interfaces;
 using Eventos.Utilerias;
+using Eventos.Utilerias.Interfaces;
 using System;
-using System.Collections.Generic;
 
 namespace Eventos
 {
@@ -9,15 +9,14 @@ namespace Eventos
     {
         static void Main(string[] args)
         {
-            Fabrica.Fabrica fabrica = new Fabrica.Fabrica();
-            fabrica.Iniciar();
+            IValidadorFecha validadorFecha = new ValidadorFecha();
+            IConvertidorFecha convertidorFecha = new ConvertidorFecha();
+            ILectorArchivo lectorArchivo = new LectorArchivo(validadorFecha, convertidorFecha);
 
+            IProcesadorEvento procesadorEvento = new ProcesadorEvento(lectorArchivo);
 
-            List<Contenedor> contenedors = fabrica.LeerArchivo.Leer();
-
-            foreach(Contenedor contenedor in contenedors)
+            foreach (IEvento evento in procesadorEvento.ProcesarEvento())
             {
-                IEvent evento = fabrica.CrearInstancia(contenedor);
                 Console.WriteLine(evento.ToString());
             }
 
