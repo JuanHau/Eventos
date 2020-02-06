@@ -1,0 +1,6 @@
+C:\BLUE OCEAN\CAPACITACIÓN\Eventos\Eventos\bin\Debug\Eventos.exe.config
+C:\BLUE OCEAN\CAPACITACIÓN\Eventos\Eventos\bin\Debug\Eventos.exe
+C:\BLUE OCEAN\CAPACITACIÓN\Eventos\Eventos\bin\Debug\Eventos.pdb
+C:\BLUE OCEAN\CAPACITACIÓN\Eventos\Eventos\obj\Debug\Eventos.csprojAssemblyReference.cache
+C:\BLUE OCEAN\CAPACITACIÓN\Eventos\Eventos\obj\Debug\Eventos.exe
+C:\BLUE OCEAN\CAPACITACIÓN\Eventos\Eventos\obj\Debug\Eventos.pdb
