@@ -23,6 +23,7 @@ namespace Eventos
                 {
                     while (stream.Peek() > -1)
                     {
+                        //
                         string evento = stream.ReadLine();
 
                         Console.WriteLine(_validarEvento.FormatoMensaje(evento));
