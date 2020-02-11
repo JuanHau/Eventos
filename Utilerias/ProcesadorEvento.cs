@@ -8,18 +8,22 @@ namespace Eventos.Utilerias
     public class ProcesadorEvento : IProcesadorEvento
     {
         protected ILectorArchivo _lectorArchivo;
+        protected IProcesadorString _procesadorString;
 
-        public ProcesadorEvento(ILectorArchivo lectorArchivo)
+        public ProcesadorEvento(ILectorArchivo lectorArchivo, IProcesadorString procesadorString)
         {
             _lectorArchivo = lectorArchivo;
+            _procesadorString = procesadorString;
         }
 
-        public List<IEvento> ProcesarEvento()
+        public List<IEvento> ProcesarEvento(string ruta, char separador)
         {
-            List<Contenedor> resultado = _lectorArchivo.LeerArchivo();
             List<IEvento> eventos = new List<IEvento>();
 
-            foreach (Contenedor contenedor in resultado)
+            List<string> contenido = _lectorArchivo.LeerArchivo(ruta);
+            List<Contenedor> contenedores = _procesadorString.ProcesarString(contenido, separador);
+
+            foreach (Contenedor contenedor in contenedores)
             {
                 IEvento evento = null;
                 switch (contenedor.Tipo)

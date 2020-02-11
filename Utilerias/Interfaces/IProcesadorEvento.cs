@@ -5,6 +5,6 @@ namespace Eventos.Utilerias.Interfaces
 {
     public interface IProcesadorEvento
     {
-        List<IEvento> ProcesarEvento();
+        List<IEvento> ProcesarEvento(string ruta, char separador);
     }
 }

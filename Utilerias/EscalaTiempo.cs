@@ -2,10 +2,10 @@
 {
     public enum EscalaTiempo
     {
+        NoEscala,
         Mes,
         Dia,
         Hora,
-        Minuto,
-        Segundo
+        Minuto
     }
 }

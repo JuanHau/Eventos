@@ -34,9 +34,6 @@ namespace Eventos.TipoEventos
                 case EscalaTiempo.Minuto:
                     escala = Duracion > 1 ? "minutos" : "minuto";
                     break;
-                case EscalaTiempo.Segundo:
-                    escala = Duracion > 1 ? "segundos" : "segundo";
-                    break;
             }
             resultado = string.Format("{0} ocurrirá dentro de {1} {2}", Nombre, Duracion, escala);
 

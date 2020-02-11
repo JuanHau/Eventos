@@ -1,5 +1,4 @@
 ﻿using Eventos.Utilerias;
-using System;
 
 namespace Eventos.TipoEventos.Interfaces
 {

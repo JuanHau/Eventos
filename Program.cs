@@ -1,21 +1,31 @@
-﻿using Eventos.TipoEventos.Interfaces;
+﻿using Eventos.Configuracion;
+using Eventos.TipoEventos.Interfaces;
 using Eventos.Utilerias;
 using Eventos.Utilerias.Interfaces;
 using System;
 
 namespace Eventos
 {
-    public class Program
+    public static class Program
     {
         static void Main(string[] args)
         {
-            IValidadorFecha validadorFecha = new ValidadorFecha();
+            IObtenedorEscala obtenedorEscala = new ObtenedorEscala();
+            IObtenedorTipoEvento obtenedorTipoEvento = new ObtenedorTipoEvento();
+            IObtenedorDuracion obtenedorDuracion = new ObtenedorDuracion();
             IConvertidorFecha convertidorFecha = new ConvertidorFecha();
-            ILectorArchivo lectorArchivo = new LectorArchivo(validadorFecha, convertidorFecha);
 
-            IProcesadorEvento procesadorEvento = new ProcesadorEvento(lectorArchivo);
+            IProcesadorString procesadorString = new ProcesadorString(
+                obtenedorEscala,
+                obtenedorTipoEvento,
+                obtenedorDuracion,
+                convertidorFecha);
 
-            foreach (IEvento evento in procesadorEvento.ProcesarEvento())
+            ILectorArchivo lectorArchivo = new LectorArchivo();
+
+            IProcesadorEvento procesadorEvento = new ProcesadorEvento(lectorArchivo, procesadorString);
+
+            foreach (IEvento evento in procesadorEvento.ProcesarEvento(ConfiguracionGeneral.RutaArchivo, ConfiguracionGeneral.CaracterSeparacion))
             {
                 Console.WriteLine(evento.ToString());
             }
